@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    // website: {
+    //     name: "Movies"
+    // }
+};
 
 module.exports = nextConfig;
