@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Radio, RadioGroup } from '@headlessui/react'
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 const product = {
@@ -75,9 +75,9 @@ interface MoviesProps {
     movies: Movie[];
 }
 
-function useMovie(id) {
+function useMovie(id: string) {
 
-    const fetcher = (...args) => fetch(...args).then((res) => res.json());
+    const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
     const { data, error, isLoading } = useSWR(`/api/movie/${id}`, fetcher);
     return {
         movie: data,
