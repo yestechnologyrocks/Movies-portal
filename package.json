@@ -8,7 +8,8 @@
         "test:watch": "jest --watch",
         "lint": "next lint",
         "lint-fix": "next lint --fix",
-        "prepare": "husky"
+        "prepare": "husky",
+        "lint-fix1": "next lint --fix"
     },
     "dependencies": {
         "mongodb": "^6.5.0",
