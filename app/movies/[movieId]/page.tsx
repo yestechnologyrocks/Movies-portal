@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Radio, RadioGroup } from '@headlessui/react'
+import Image from 'next/image';
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -21,19 +22,19 @@ const product = {
     ],
     images: [
         {
-            src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
+            src: 'https://tailwindui.com/Image/ecommerce-images/product-page-02-secondary-product-shot.jpg',
             alt: 'Two each of gray, white, and black shirts laying flat.',
         },
         {
-            src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
+            src: 'https://tailwindui.com/Image/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
             alt: 'Model wearing plain black basic tee.',
         },
         {
-            src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
+            src: 'https://tailwindui.com/Image/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
             alt: 'Model wearing plain gray basic tee.',
         },
         {
-            src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
+            src: 'https://tailwindui.com/Image/ecommerce-images/product-page-02-featured-product-shot.jpg',
             alt: 'Model wearing plain white basic tee.',
         },
     ],
@@ -131,7 +132,7 @@ const Page = ({ params }: { params: { movieId: string } }) => {
                 {/* Image gallery */}
                 <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
                     <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-                        <img
+                        <Image
                             alt={movie.title}
                             src={movie.poster}
                             className="h-full w-full object-cover object-center"
@@ -139,14 +140,14 @@ const Page = ({ params }: { params: { movieId: string } }) => {
                     </div>
                     <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
                         <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-                            <img
+                            <Image
                                 alt={product.images[1].alt}
                                 src={product.images[1].src}
                                 className="h-full w-full object-cover object-center"
                             />
                         </div>
                         <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-                            <img
+                            <Image
                                 alt={product.images[2].alt}
                                 src={product.images[2].src}
                                 className="h-full w-full object-cover object-center"
@@ -154,7 +155,7 @@ const Page = ({ params }: { params: { movieId: string } }) => {
                         </div>
                     </div>
                     <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-                        <img
+                        <Image
                             alt={product.images[3].alt}
                             src={product.images[3].src}
                             className="h-full w-full object-cover object-center"

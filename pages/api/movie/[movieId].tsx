@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "../../../lib/mongodb";
 import { ObjectId } from "mongodb";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const MovieId = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         const { movieId } = req.query
         const client = await clientPromise;
@@ -16,3 +16,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         console.error(e);
     }
 };
+
+export default MovieId

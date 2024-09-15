@@ -18,7 +18,12 @@ const config: Config = {
             },
         },
     },
-    plugins: [require("daisyui"), require("@tailwindcss/aspect-ratio")],
+    plugins: [
+        require("@tailwindcss/typography"),
+        require("daisyui"),
+        require("@tailwindcss/aspect-ratio"),
+        require("@tailwindcss/forms"),
+    ],
     daisyui: {
         themes: ["light", "dark", "cupcake"],
     },

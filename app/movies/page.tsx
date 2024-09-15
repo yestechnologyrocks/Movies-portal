@@ -4,6 +4,7 @@ import React from 'react'
 import clientPromise from "../../lib/mongodb";
 import useSWR from 'swr';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 interface Movie {
@@ -19,7 +20,7 @@ interface MoviesProps {
 
 const Page = () => {
 
-    const fetcher = (...args) => fetch(...args).then((res) => res.json());
+    const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
     const { data, error } = useSWR('/api/movies', fetcher);
     if (error) return <div>Failed to load</div>
     if (!data) return <div>Loading...</div>
@@ -33,7 +34,7 @@ const Page = () => {
                         {data.map((movie: Movie) => (
                             <div key={movie._id} className="group relative">
                                 <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                                    <img
+                                    <Image
                                         alt={movie.title}
                                         src={movie.poster}
                                         className="h-full w-full object-cover object-center"
